@@ -8,6 +8,7 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import LoginIcon from '@mui/icons-material/Login';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
@@ -34,6 +35,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { getAuth, signOut } from 'firebase/auth';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import Review from '../../Review/Review';
+import Testimonal from '../../Testimonal/Testimonal';
+import RecommendIcon from '@mui/icons-material/Recommend';
 
 const drawerWidth = 240;
 
@@ -163,6 +166,18 @@ function UserHome() {
                 </ListItemIcon>
                 <ListItemText primary="Admin Login" />
               </ListItemButton>
+              <ListItemButton onClick={changetoAdmin}>
+                <ListItemIcon>
+                  <LoginIcon />
+                </ListItemIcon>
+                <ListItemText primary="User Login" />
+              </ListItemButton>
+              <ListItemButton >
+                <ListItemIcon>
+                  <RecommendIcon />
+                </ListItemIcon>
+                <ListItemText primary="Recommendations" />
+              </ListItemButton>
               <ListItemButton onClick={handleLogout}>
                 <ListItemIcon>
                   <LogoutIcon />
@@ -187,7 +202,10 @@ function UserHome() {
           <Toolbar />
           <Container  maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <MapBox />
-            {/* <Review /> */}
+            <Divider style={{fontWeight:'bold'}}>Review</Divider>
+            <Review />
+            <Divider style={{fontWeight:'bold'}}>Happy Clients</Divider>
+            <Testimonal />
           </Container>
         </Box>
       </Box>

@@ -19,12 +19,12 @@ function ProtectedRoute({ element, adminRequired }) {
 }
 
 function App() {
-  useEffect(() => {
-    // Trigger the Google Translate widget when the component mounts
-    if (window.googleTranslateElementInit) {
-      window.googleTranslateElementInit();
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Trigger the Google Translate widget when the component mounts
+  //   if (window.googleTranslateElementInit) {
+  //     window.googleTranslateElementInit();
+  //   }
+  // }, []);
   return (
     <div className="App">
       <div id="google_translate_element"></div>
